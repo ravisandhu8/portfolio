@@ -1763,7 +1763,7 @@ body {
 }
 .cid-r3KBMZ3I6x {
   padding-top: 120px;
-  padding-bottom: 60px;
+  padding-bottom: 0px;
   background-color: #ffffff;
 }
 @media (min-width: 992px) {
@@ -1894,6 +1894,12 @@ body {
 .cid-r3KE7SCqCp .mbr-timeline-text {
   text-align: left;
 }
+.cid-r3KE7SCqCp .mbr-timeline-title {
+  text-align: left;
+}
+.cid-r3KE7SCqCp .mbr-timeline-date {
+  text-align: left;
+}
 .cid-r3KM3Jyp5a {
   padding-top: 90px;
   padding-bottom: 90px;
@@ -1958,16 +1964,16 @@ body {
   content: '100';
 }
 .cid-r3KM3Jyp5a .progress2 .progressbar-number:before {
-  content: '90';
+  content: '100';
 }
 .cid-r3KM3Jyp5a .progress3 .progressbar-number:before {
-  content: '80';
+  content: '100';
 }
 .cid-r3KM3Jyp5a .progress4 .progressbar-number:before {
-  content: '70';
+  content: '100';
 }
 .cid-r3KM3Jyp5a .progress5 .progressbar-number:before {
-  content: '60';
+  content: '90';
 }
 @media (min-width: 768px) {
   .cid-r3KM3Jyp5a .text-elements {
@@ -2035,72 +2041,10 @@ body {
     height: auto !important;
   }
 }
-.cid-r3KGrsionM {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  background-color: #ffffff;
-}
-.cid-r3KGrsionM .mbr-slider .carousel-control {
-  background: #1b1b1b;
-}
-.cid-r3KGrsionM .mbr-slider .carousel-control-prev {
-  left: 0;
-  margin-left: 2.5rem;
-}
-.cid-r3KGrsionM .mbr-slider .carousel-control-next {
-  right: 0;
-  margin-right: 2.5rem;
-}
-.cid-r3KGrsionM .mbr-slider .modal-body .close {
-  background: #1b1b1b;
-}
-.cid-r3KGrsionM .mbr-gallery-item > div::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #554346;
-  background: linear-gradient(to left, #554346, #45505b) !important;
-  opacity: 0;
-  -webkit-transition: 0.2s opacity ease-in-out;
-  transition: 0.2s opacity ease-in-out;
-}
-.cid-r3KGrsionM .mbr-gallery-item > div:hover .mbr-gallery-title::before {
-  background: transparent !important;
-}
-.cid-r3KGrsionM .mbr-gallery-item > div:hover:before {
-  opacity: 0.7 !important;
-}
-.cid-r3KGrsionM .mbr-gallery-title {
-  font-size: .9em;
-  position: absolute;
-  display: block;
-  width: 100%;
-  bottom: 0;
-  padding: 1rem;
-  color: #fff;
-  z-index: 2;
-}
-.cid-r3KGrsionM .mbr-gallery-title:before {
-  content: " ";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  position: absolute;
-  background: #554346 !important;
-  background: linear-gradient(to left, #554346, #45505b) !important;
-  opacity: 0.7;
-  -webkit-transition: 0.2s background ease-in-out;
-  transition: 0.2s background ease-in-out;
-}
 .cid-r3KPFzAdje {
   padding-top: 90px;
   padding-bottom: 90px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
 }
 .cid-r3KPFzAdje .mbr-section-subtitle {
   color: #767676;
@@ -2147,7 +2091,7 @@ body {
   height: 100%;
   padding: 30px 30px;
   color: #ffffff;
-  background-color: #55b4d4;
+  background-color: #86318f;
   z-index: 1;
   margin: 0;
   text-align: center;
