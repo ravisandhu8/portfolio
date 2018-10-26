@@ -1,0 +1,150 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.woff?v=1540410083099); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(MaterialIcons-Regular.woff?v=1540410083099) format('woff'),
+}
+
+@font-face {
+    font-family: 'Custom Icons';
+    font-weight: normal;
+    font-style: normal;
+    src: url(../fonts/Custom-Icons.woff?v=1540410083099); /* For IE6-8 */
+    src: local('Custom Icons'),
+        local('Custom-Icons'),
+        url(Custom-Icons.woff?v=1540410083099) format('woff'),
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'Custom Icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-check_mark:before {
+  content: "\e900";
+}
+.icon-eye:before {
+  content: "\e901";
+}
+.icon-eye_lock:before {
+  content: "\e902";
+}
+.icon-mail:before {
+  content: "\e903";
+}
+.icon-name:before {
+  content: "\e904";
+}
+.icon-password2:before {
+  content: "\e905";
+}
+.icon-correct_check:before {
+  content: "\e906";
+}
+.icon-incorrect_cross:before {
+  content: "\e907";
+}
+.icon-left_arrow:before {
+  content: "\e908";
+}
+.icon-up_arrow:before {
+  content: "\e909";
+}
+.icon-google:before {
+  content: "\e90a";
+}
+.icon-facebook:before {
+  content: "\e90b";
+}
+.icon-twitter:before {
+  content: "\e90c";
+}
+.icon-user:before {
+  content: "\e90d";
+}
+.icon-all_devices:before {
+  content: "\e90e";
+}
+.icon-no_connection:before {
+  content: "\e90f";
+}
+.icon-password:before {
+  content: "\e910";
+}
+.icon-linkedin:before {
+  content: "\e911";
+}
+.icon-link:before {
+  content: "\e912";
+}
+.icon-google2:before {
+  content: "\e913";
+}
+.icon-facebook2:before {
+  content: "\e914";
+}
+.icon-linkedin2:before {
+  content: "\e915";
+}
+.icon-email:before {
+  content: "\e916";
+}
+.icon-lock:before {
+  content: "\e917";
+}
+.icon-envelope:before {
+  content: "\e918";
+}
+.icon-attention:before {
+  content: "\e91a";
+}
+.icon-home:before {
+  content: "\e91b";
+}
+.icon-survey:before {
+  content: "\e99c";
+}
+.icon-file:before {
+  content: "\e899";
+}
+.icon-zip:before {
+  content: "\e898";
+}

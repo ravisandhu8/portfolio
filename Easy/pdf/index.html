@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>easygenerator</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,400,300,100,700&subset=latin,cyrillic-ext' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="styles.css?v=1540410083099">
+</head>
+
+<body>
+    <div data-bind="template: { afterRender: renderingFinished }">
+        <img class="course-logo" data-bind="event: { load: logoUploaded, error: logoUploaded }, attr: { src: logoUrl }" />
+
+        <h1 class="course-caption" data-bind="text: title"></h1>
+        <!-- ko if: allowAuthorsBio || hasIntroductionContent -->
+            <div class="course-intro-text styled-content content">
+                <!-- ko if: allowAuthorsBio -->
+                    <div class="author-information-wrapper">
+                        <h3 class="cource-intro-title" data-bind="text: 'About the author'"></h3>
+                        <div class="author-information-content">
+                            <div class="author-information-image">
+                                <!-- ko if: authorAvatarUrl -->
+                                    <img data-bind="event: { load: avatarUploaded, error: avatarUploaded }, attr: {src: authorAvatarUrl + '?width=156&height=156&scaleBySmallerSide=true'}" alt="" />
+                                <!-- /ko -->
+                                <!-- ko ifnot: authorAvatarUrl -->
+                                    <img data-bind="event: { load: avatarUploaded, error: avatarUploaded }" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABD1JREFUeAHtW1tLFVEUXnuOZmWpFXZBjiREhAUhPYiZ4UuBQb1FRE/1S/wtQUT0WBQEgXgpeujB7hSFZEEkXcyy1HOcvm+OisfLcZ/Za87FmQXbmTMze39rfXvt29pbIyWTiymRzwcBd0RkvhnXnQsJF5nKJW8C1zciLWMit7O4j1xM5AjSu0Nk7jSMPi7i19nhmRkRb1SkdlBk4LddnnBfRUhAb43ITDeMRpIt4dSTWREzIlKHNJAJWUbBbBERcLYeXn0JxrcWRLd+aT6ixdwSefDHOovlhxEQcHIv3P0K8BstdbD9bBLN4obIo6+2GWy+Q8ekKaz5f1dRorbxVHIrPOqwSPtzkfdzWlorEsA2P82a36el3BrlgITZtMghkDA2v8b7oh95RedYN0PQ4Sm1+XVB8IL9CrF0RIkADnVBb6+j1YalEIuY7qJEAMf50ENdGCswrAaYYfLm5VEggDM8TnJKLcQktpsoEMDpre0Mz03Z/NzEDKbW+Y+L/KVAAOf2ZRNnbAUCgoVNmRhwx1YgIFjVlYkAd+yEgHJVXaXgangAgxnlEmfshAD3qgvCWO7FhCrBHVvDAxDDK5s4YysQwAAmY3ilFmIS200UCGD0lgHMUgsx3SPHCgTQcEZvGcAsmQArwHQGdF5N5TQYg0JpktnmrJFVAQaED7+z+nSDj5Q8gCgMXTN6G7UQg1g6okgA4/YMXQuit5EJyiaG3h6BUhNYNJjR2tYPuegto7iqAuMZFh/4qVmqMgFUbRybFwxdM3qrFR6n2zdc1zae2kZAAIulJzB0neUGZ4sDDrfGBtHm74o8jGSuEcHOEAlYLrHdHF1OAu8rc3t8pZbJ74SBhIGEgYSBhIGEgfgwEOFM8EQtprC7sHO8B4sjpJrdmBojGRyjke14xpNjOFUSCFaShgGVaTzHWiL1XSSDZL5hAYQ080PkKabX+qJIQGcD7MECKIsTHAbJ3w91tcr3UdQXlIlFUQopMy7y5JcGHQ4K+sjbTWOPopZxeMlv0lDIvgyDZbH3FrgvRUZAigFJxUuRBNDoHtRyBkZ77TCcx10rQLwp6PIKHggyhuAd9mRYEtDvidw/BqN7wHhzBVhcQAUzATKGRPpeiPTPF/gweLUBATz6lsFRlOwpGI4OrZrEoONMDcMrRguF0AoQ0IXTF/45mIzOraoFnaW5J/J4zV2kNQjow9mbyfNwI7j8ZhIPTaLxDppyXmRpBQFdGKflcuW387AVw/5BbsIbMMfIybKYYGD8tepr64umWF3rc8N2Gs3h01/mWCCgaxvuaXyjVTHV/RFmoAbzlvQzkJDB8Ebxzmzyms+ZufSXIxptDjygE6e7/QtL72Jz4x9AxP41PMDriI3Nqwz1OkCA37bqeWwe+G0gwJR4EVNJ7JomeoDlv7JVkuJauvh1ICDekhAQ7/rHGJgQEHMGEg+IuQPIfwZv80iu+oMwAAAAAElFTkSuQmCC" alt="" />
+                                <!-- /ko -->
+                            </div>
+                            <div class="author-information-text">
+                                <div class="author-information-name" data-bind="text: createdBy"></div>
+                                <!-- ko if: authorContactEmail || authorPersonalPhone -->
+                                    <div class="author-information-contacts">
+                                        <!-- ko if: authorContactEmail -->
+                                            <div class="author-information-email">
+                                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAAXNSR0IArs4c6QAAARxJREFUKBWVkc9KAlEUxn8zk1rLaGFgtJAeoFWKFAlu+kdFa1flG/QC0iu4TVeuwwhyIUFR0J8naGO4aem61Jzpu5LMlQayA2fOud/5vnPunePxy/IzsLgHS6dyB1ba0PFtmkDbshlwjiHoKV4r7igmFGvw9Dxm/ojW0zAsCUyBX4ftGyire9mFZgHcomrv4J3Dw5tEGQHuvsAGJC7g9nPcMYz5Wegd6XyoqZceLJ8pacFAEx77IdHOOl+QfFXzeV33QOMDCdmFeAVyqzY1zA1u6oYXeLpe9iosjrJ7vasKL11YW1D3E6EbNidKpLrzoc+dfFOd52yBybWTKBsRt6IqBtOb/m9GNLHtKVr45pfHdO+0yIF8+IdrJW7jG1dNRWARFCn0AAAAAElFTkSuQmCC" alt="" />
+                                                <span data-bind="text: authorContactEmail"></span>
+                                            </div>
+                                        <!-- /ko -->
+                                        <!-- ko if: authorPersonalPhone -->
+                                            <div class="author-information-phone">
+                                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAQJJREFUKBV1kb1qAlEQhb/VSKwsQyCrIlibOoHY5wHs9BnyBEIg5BXsfAIbO1vBIpIq5A9CmsRFEISIYpME3Zxr9upF14HZmTlzzr0zez04a0J4xMq8Ntyp3m8JkdObdlja5PGZBHw5LR+uDbbX1PTenO4vvHhOvZNKkOhH6Fzj1aG12GE5wAGkHmAx0k3P0H93erFpEj6WkJvq9CrkHyEYxzIjUAJjwSf4WYkqcHIPw9k/br4VcV5DWzsLXh7C5Faj5SRsaLwulAvwcyOyEQwUnhyBOWMlulJyIe/JT+UZ+dq2BBY/L8OypurYIjZGO9jSRrNTsaMRzBt9y/U3MW82/QMVvzmncsvjiwAAAABJRU5ErkJggg==" alt="" />
+                                                <span data-bind="text: authorPersonalPhone"></span>
+                                            </div>
+                                        <!-- /ko -->
+                                    </div>
+                                <!-- /ko -->
+                                <!-- ko if: authorShortBio -->
+                                    <div class="author-information-bio" data-bind="text: authorShortBio"></div>
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                    </div>
+                <!-- /ko -->
+                <!-- ko if: hasIntroductionContent -->
+                    <div data-bind="loadHtml: introductionContent"></div>
+                <!-- /ko -->
+            </div>
+        <!-- /ko -->
+        <!-- ko foreach: { data: sections, as: 'section' } -->
+        <!-- ko if: $root.filterQuestionTypes(section.questions).length > 0 -->
+        <h2 class="section-info" data-bind="text: section.title"></h2>
+
+        <div>
+
+            <!-- ko foreach: { data: $root.filterQuestionTypes(section.questions), as: 'question' } -->
+
+            <div class="question-body">
+
+                <!-- ko if: question.type == 'informationContent' -->
+
+                <h3 class="question-title" data-bind="text: question.title"></h3>
+                <!-- ko if: question.learningContents.length > 0 -->
+                <ul class="learning-content-items content">
+                    <!-- ko foreach: question.learningContents -->
+                    <!-- ko ifnot: children.length -->
+                    <li class="learning-content-item styled-content" data-bind="loadHtml: html"></li>
+                    <!-- /ko -->
+                    <!-- ko if: children.length -->
+                    <li class="expandable-block-wrapper">
+                        <div class="expandable-block-title" data-bind="loadHtml: html"></div>
+                        <ul class="expandable-block-items">
+                            <!-- ko foreach: children -->
+                            <li class="expandable-block-item styled-content" data-bind="loadHtml: html"></li>
+                            <!-- /ko -->
+                        </ul>
+                    </li>
+                    <!-- /ko -->
+                    <!-- /ko -->
+                </ul>
+                <!-- /ko -->
+                <!-- /ko -->
+                <!-- ko ifnot: question.type == 'informationContent' -->
+                <!-- ko if: question.learningContents.length > 0 -->
+                <ul class="learning-content-items content with-icon">
+                    <!-- ko foreach: question.learningContents -->
+                    <li class="learning-content-item styled-content" data-bind="loadHtml: html"></li>
+                    <!-- ko if: children.length -->
+                    <li class="expandable-block-wrapper">
+                            <ul class="expandable-block-items">
+                                <!-- ko foreach: children -->
+                                <li class="expandable-block-item styled-content" data-bind="loadHtml: html"></li>
+                                <!-- /ko -->
+                            </ul>
+                        </li>
+                        <!-- /ko -->
+                    <!-- /ko -->
+                </ul>
+                <!-- /ko -->
+                <h3 class="question-title with-icon" data-bind="text: question.title, css: {survey: question.isSurvey}"></h3>
+
+                <!-- ko if: question.questionInstructions.length > 0 -->
+                <div class="question-content-wrapper">
+                    <!-- ko foreach: question.questionInstructions -->
+                    <div class="question-content styled-content" data-bind="loadHtml: html"></div>
+                    <!-- ko if:  -->
+                    <ul class="expandable-block-items">
+                        <!-- ko foreach: children -->
+                        <li class="expandable-block-item styled-content" data-bind="loadHtml: html"></li>
+                        <!-- /ko -->
+                    </ul>
+                    <!-- /ko -->
+                    <!-- /ko -->
+                </div>
+                <!-- /ko -->
+
+                <!-- ko if: question.type == 'singleSelectText' -->
+                <ul class="question-answers-list" data-bind="foreach: question.answers">
+                    <li class="radio">
+                        <span class="radio-icon-wrapper">
+                            <button class="radio-icon"></button>
+                        </span>
+                        <label class="radio-text" data-bind="text: text"></label>
+                    </li>
+                </ul>
+                <!-- /ko -->
+                <!-- ko if: question.type == 'multipleSelect' -->
+                <ul class="question-answers-list" data-bind="foreach: question.answers">
+                    <li class="checkbox">
+                        <span class="checkbox-icon-wrapper">
+                            <button class="checkbox-icon"></button>
+                        </span>
+                        <label class="checkbox-text" data-bind="text: text"></label>
+                    </li>
+                </ul>
+                <!-- /ko -->
+                <!-- ko if: question.type == 'singleSelectImage' -->
+                <ul class="single-select-image" data-bind="foreach: question.answers">
+                    <li class="select-image">
+                        <div class="select-image-wrapper">
+                            <span class="preview-thumbnail">
+                                <img class="thumbnail" data-bind="event: { load: $root.singleSelectImageAnswerLoaded, error: $root.singleSelectImageAnswerLoaded }, attr:{ 'data-image': image, src: image + '?height=200&amp;width=250&amp;scaleBySmallerSide=true' }">
+                            </span>
+                            <button class="preview-button-wrapper"></button>
+                        </div>
+                        <div class="question-answer-radiobutton-wrapper">
+                            <a class="question-answer-radiobutton">&nbsp;</a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- /ko -->
+                <!-- ko if: question.type == 'fillInTheBlank' -->
+                <div class="question-content-wrapper blank-content fill-in-the-blank">
+                    <!-- ko if: question.hasContent -->
+                    <div class="question-content blank-answers styled-content" data-bind="loadHtml: content"></div>
+                    <!-- /ko -->
+                </div>
+                <!-- /ko -->
+                <!-- ko if: question.type == 'textMatching' -->
+                <div class="text-matching-caption" data-translate-text="[text matching question pdf hint]">
+                    Сombine elements from the left column with the elements on the right
+                </div>
+                <!-- ko foreach: $root.shuffleKeyValues(question.answers) -->
+                <div class="text-matching-row">
+                    <div class="text-matching-column">
+                        <div class="text-matching-source-wrapper">
+                            <div class="text-matching-source">
+                                <div class="text-matching-source-text-wrapper">
+                                    <div class="text-matchig-source-text" data-bind="text: key"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-matching-column empty">&nbsp;</div>
+                    <div class="text-matching-column">
+                        <div class="text-matching-target-wrapper">
+                            <div class="text-matching-target">
+                                <div class="text-matching-target-text-wrapper">
+                                    <div class="text-matching-target-text" data-bind="text: value"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /ko -->
+                <!-- /ko -->
+                <!-- ko if: question.type == 'rankingText' -->
+                <div data-bind="foreach: $root.shuffle(question.answers)">
+                    <div class="ranking-item">
+                        <div class="ranking-item-box"></div>
+                        <div class="ranking-item-text" data-bind="text: text"></div>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: question.type == 'statement' -->
+                <ul class="statement">
+                    <li class="statement-headers-group">
+                        <div class="statement-option" data-translate-text="[statement question true text]">
+                            True
+                        </div>
+                        <div class="statement-option" data-translate-text="[statement question false text]">
+                            False
+                        </div>
+                    </li>
+
+                    <!-- ko foreach: question.answers -->
+                    <li class="statement-item">
+                        <span class="statement-option ">
+                            <span class="radio-icon-wrapper">
+                                <button class="radio-icon"></button>
+                            </span>
+                        </span>
+                        <span class="statement-option-separator-wrapper">
+                            <span class="statement-option-separator"></span>
+                        </span>
+                        <span class="statement-option">
+                            <span class="radio-icon-wrapper">
+                                <button class="radio-icon"></button>
+                            </span>
+                        </span>
+                        <span class="statement-label" data-bind="text: text"></span>
+                    </li>
+                    <!-- /ko -->
+                </ul>
+                <!-- /ko -->
+                <!-- ko if: question.type == 'openQuestion' -->
+                <div class="edit-field-wrapper">
+                    <textarea class="edit-field selectable"></textarea>
+                </div>
+                <!-- /ko -->
+                <!-- /ko -->
+
+            </div>
+
+            <!-- /ko -->
+
+        </div>
+        <!-- /ko -->
+        <!-- /ko -->
+    </div>
+    <script src="scripts.js?v=1540410083099"></script>
+</body>
+
+</html>
